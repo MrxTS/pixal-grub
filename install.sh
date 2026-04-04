@@ -22,3 +22,24 @@ sudo cp "$SCRIPT_DIR/theme.txt"         "$THEME_DIR/"
 
 echo "==> Installiert: $THEME_DIR"
 ls "$THEME_DIR"
+
+GRUB_DEFAULT="/etc/default/grub"
+THEME_PATH="$THEME_DIR/theme.txt"
+
+echo "==> Setze GRUB_THEME in $GRUB_DEFAULT ..."
+# GRUB_THEME setzen oder ersetzen
+if grep -q "^GRUB_THEME=" "$GRUB_DEFAULT"; then
+  sudo sed -i "s|^GRUB_THEME=.*|GRUB_THEME=\"$THEME_PATH\"|" "$GRUB_DEFAULT"
+else
+  echo "GRUB_THEME=\"$THEME_PATH\"" | sudo tee -a "$GRUB_DEFAULT" > /dev/null
+fi
+
+# GRUB_BACKGROUND auskommentieren falls vorhanden (würde theme überschreiben)
+if grep -q "^GRUB_BACKGROUND=" "$GRUB_DEFAULT"; then
+  sudo sed -i "s|^GRUB_BACKGROUND=|# GRUB_BACKGROUND=|" "$GRUB_DEFAULT"
+  echo "==> GRUB_BACKGROUND auskommentiert (würde Theme überschreiben)"
+fi
+
+echo "==> Generiere grub.cfg ..."
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+echo "==> Fertig. Beim nächsten Boot ist das Theme aktiv."

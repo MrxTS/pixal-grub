@@ -1,6 +1,6 @@
 # pixal-grub
 
-A GRUB bootloader theme inspired by the [pixel-emerald](https://github.com/MrxTS/qylock) SDDM lockscreen theme — same background, same font, same color palette.
+A GRUB bootloader theme inspired by the **pixel-emerald** SDDM lockscreen theme from [qylock](https://github.com/Darkkal44/qylock) by [Darkkal44](https://github.com/Darkkal44) — same background frame, same font, same color palette.
 
 ![GRUB Theme Preview](screenshot.png)
 
@@ -20,7 +20,7 @@ Font: **PixelifySans Bold** (from pixel-emerald)
 - `ffmpeg`
 - `grub-mkfont` (part of `grub`)
 - `imagemagick`
-- The [pixel-emerald](https://github.com/MrxTS/qylock) theme installed at `~/qylock/`
+- [qylock](https://github.com/Darkkal44/qylock) with the `pixel-emerald` theme installed at `~/qylock/`
 
 ## Build & Install
 
@@ -28,16 +28,11 @@ Font: **PixelifySans Bold** (from pixel-emerald)
 # Generate all assets (background, fonts, sprites)
 ./build.sh
 
-# Install to /boot/grub/themes/pixel-emerald/
+# Install theme, set GRUB_THEME automatically, and regenerate grub.cfg
 ./install.sh
-
-# Activate in /etc/default/grub
-# Set: GRUB_THEME="/boot/grub/themes/pixel-emerald/theme.txt"
-# Remove or comment out: GRUB_BACKGROUND=...
-
-# Regenerate GRUB config
-sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
+
+`install.sh` handles everything: copies files to `/boot/grub/themes/pixel-emerald/`, sets `GRUB_THEME` in `/etc/default/grub`, and runs `grub-mkconfig`. No manual config editing needed.
 
 ## GRUB Resolution
 
@@ -55,3 +50,8 @@ GRUB_GFXPAYLOAD_LINUX=keep
 **Unknown font** — run `strings /boot/grub/themes/pixel-emerald/pixel-emerald-22.pf2 | head -3` and verify it shows `PixelifySans Bold`.
 
 **Background missing** — verify `GRUB_GFXMODE` is set and `GRUB_BACKGROUND` is not overriding the theme.
+
+## Credits
+
+- **pixel-emerald** theme — [Darkkal44/qylock](https://github.com/Darkkal44/qylock) by [@Darkkal44](https://github.com/Darkkal44)
+- Font — [PixelifySans](https://github.com/eifetx/Pixelify-Sans) by Eifetx
