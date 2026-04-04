@@ -54,7 +54,7 @@ W='#c0c0c0'  # Dim White
 T='none'     # Transparent
 
 # Linux-Pinguin (32x32, Pixel-Art)
-convert -size 32x32 xc:$T \
+convert -size 32x32 xc:"$T" \
   -fill "$E" \
   -draw "rectangle 11,2 20,6"   \
   -draw "rectangle 9,6 22,18"   \
@@ -76,7 +76,7 @@ cp "$ICONS/linux.png" "$ICONS/gnu-linux.png"
 cp "$ICONS/linux.png" "$ICONS/gnu.png"
 
 # Windows-Logo (4 Quadrate)
-convert -size 32x32 xc:$T \
+convert -size 32x32 xc:"$T" \
   -fill "$W" \
   -draw "rectangle 3,3 14,14"   \
   -draw "rectangle 17,3 28,14"  \
@@ -88,7 +88,7 @@ cp "$ICONS/windows.png" "$ICONS/windows10.png"
 cp "$ICONS/windows.png" "$ICONS/windows11.png"
 
 # UEFI-Firmware (einfaches Zahnrad-ähnliches Symbol)
-convert -size 32x32 xc:$T \
+convert -size 32x32 xc:"$T" \
   -fill "$M" \
   -draw "ellipse 16,16 8,8 0,360" \
   -draw "rectangle 13,1 18,7"  \
@@ -105,7 +105,7 @@ convert -size 32x32 xc:$T \
 cp "$ICONS/uefi-firmware.png" "$ICONS/efi.png"
 
 # Memtest
-convert -size 32x32 xc:$T \
+convert -size 32x32 xc:"$T" \
   -fill "$E" \
   -draw "rectangle 4,4 27,27" \
   -fill "$T" \
@@ -118,7 +118,7 @@ convert -size 32x32 xc:$T \
 cp "$ICONS/memtest86+.png" "$ICONS/memtest.png"
 
 # Submenu (Ordner-Symbol)
-convert -size 32x32 xc:$T \
+convert -size 32x32 xc:"$T" \
   -fill "$W" \
   -draw "rectangle 3,8 13,11"   \
   -draw "rectangle 3,11 28,26"  \
@@ -127,7 +127,7 @@ convert -size 32x32 xc:$T \
   PNG32:"$ICONS/submenu.png"
 
 # Shutdown / Halt
-convert -size 32x32 xc:$T \
+convert -size 32x32 xc:"$T" \
   -fill "$W" \
   -draw "arc 6,6 25,25 -60,240" \
   -fill "$T" \
