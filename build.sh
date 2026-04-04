@@ -19,6 +19,6 @@ ffmpeg -y -ss 2.0 \
 echo "==> Fertig: $DIST/background.png"
 
 echo "==> Fonts konvertieren..."
-grub-mkfont -s 22 -n "PixelifySans Bold" -o "$DIST/pixel-emerald-22.pf2" "$SRC_FONT"
-grub-mkfont -s 16 -n "PixelifySans Bold" -o "$DIST/pixel-emerald-16.pf2" "$SRC_FONT"
+grub-mkfont -s 22 -n "PixelifySans" -o "$DIST/pixel-emerald-22.pf2" "$SRC_FONT"
+grub-mkfont -s 16 -n "PixelifySans" -o "$DIST/pixel-emerald-16.pf2" "$SRC_FONT"
 echo "==> Fertig: pixel-emerald-16.pf2, pixel-emerald-22.pf2"
