@@ -3,8 +3,8 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DIST="$SCRIPT_DIR/dist"
-SRC_VIDEO="/home/kamui/qylock/themes/pixel-emerald/bg.mp4"
-SRC_FONT="/home/kamui/qylock/themes/pixel-emerald/font/PixelifySans-Bold.ttf"
+SRC_VIDEO="$HOME/qylock/themes/pixel-emerald/bg.mp4"
+SRC_FONT="$HOME/qylock/themes/pixel-emerald/font/PixelifySans-Bold.ttf"
 
 mkdir -p "$DIST"
 
