@@ -9,7 +9,7 @@ terminal-font: "PixelifySans Bold 16"
 + boot_menu {
   left   = 7%
   top    = 62%
-  width  = 32%
+  width  = 24%
   height = 26%
   item_font             = "PixelifySans Bold 28"
   item_color            = "#c0c0c0"
