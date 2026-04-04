@@ -1,0 +1,17 @@
+language: "de-DE"
+
+reviews:
+  profile: "assertive"
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: false
+  collapse_walkthrough: false
+  path_filters:
+    - "!dist/**"
+    - "!frames/**"
+  path_instructions:
+    - path: "*.sh"
+      instructions: |
+        Prüfe auf defensive Bash-Patterns (set -euo pipefail, Quoting,
+        Pfad-Escaping). Achte besonders auf sudo-Aufrufe in install.sh —
+        nur notwendige Befehle sollten mit sudo ausgeführt werden.
