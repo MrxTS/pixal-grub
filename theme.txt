@@ -1,0 +1,32 @@
+# pixel-emerald GRUB Theme
+# Farbpalette: #0b1d1c (bg), #1fce8c (emerald), #60e8b6 (mint)
+
+title-text: ""
+desktop-image: "background.png"
+desktop-color: "#0b1d1c"
+terminal-font: "PixelifySans Bold 16"
+
++ boot_menu {
+  left   = 7%
+  top    = 66%
+  width  = 30%
+  height = 22%
+  item_font             = "PixelifySans Bold 22"
+  item_color            = "#c0c0c0"
+  selected_item_color   = "#60e8b6"
+  selected_item_pixmap_style = "select_*.png"
+  item_height  = 40
+  item_padding = 0
+  item_spacing = 4
+}
+
++ label {
+  left  = 7%
+  top   = 90%
+  width = 30%
+  align = "left"
+  id    = "__timeout__"
+  text  = "Booting in %d seconds"
+  color = "#1fce8c"
+  font  = "PixelifySans Bold 16"
+}
